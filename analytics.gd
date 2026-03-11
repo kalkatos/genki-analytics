@@ -12,16 +12,16 @@ static var player_id: String
 func _enter_tree () -> void:
 	# Check if we should enable analytics based on editor state and debug mode
 	if OS.has_feature("editor") and not debug_mode:
-		Debug.logm("Analytics module disabled in editor")
+		print("Analytics module disabled in editor")
 		return
 	# Manage player ID: load existing or generate a new random one
 	player_id = Storage.load("player_id", "")
 	if player_id.is_empty():
 		player_id = str(randi())
 		Storage.save("player_id", player_id)
-		Debug.logm("Setup as player id: " + player_id)
+		print("Setup as player id: " + player_id)
 	else:
-		Debug.logm("Loaded player id: " + player_id)
+		print("Loaded player id: " + player_id)
 
 
 ## Sends a simple event with the given key
@@ -64,5 +64,5 @@ func _is_initialized () -> bool:
 		return false
 	if sender and sender.is_initialized:
 		return true
-	Debug.log_warning("Analytics module is not initialized. Nothing will be sent")
+	push_warning("Analytics module is not initialized. Nothing will be sent")
 	return false

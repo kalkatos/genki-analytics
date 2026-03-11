@@ -18,9 +18,9 @@ func initialize ():
 
 ## Sends an event with the given key and value
 func send (key: String, value: Variant):
-	Debug.logm("Sending (FAKE) event: %s with value %s" % [key, str(value)])
+	print("Sending (FAKE) event: %s with value %s" % [key, str(value)])
 
 
 ## Sends a unique event based on the given key, value, and ID
 func send_unique (key: String, value: Variant, id: String):
-	Debug.logm("Sending (FAKE) unique event: %s with value %s and id %s" % [key, str(value), id])
+	print("Sending (FAKE) unique event: %s with value %s and id %s" % [key, str(value), id])

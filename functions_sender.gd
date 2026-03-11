@@ -15,5 +15,5 @@ func _ready () -> void:
 			url = json["SendEvent"]
 			initialize()
 			return
-	Debug.log_warning("URLs file not found or invalid, using default URL")
+	push_warning("URLs file not found or invalid, using default URL")
 	
